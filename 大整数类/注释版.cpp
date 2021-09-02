@@ -90,7 +90,7 @@ big::big(string s)
 }
 ostream& operator << (ostream& output,const big&c)
 {
-    big temp=c;//这一步把c赋值给temp，是因为c是引用不能修改，如果c有前导0，输出就是错的了
+    big temp=c;//这一步把c赋值给temp，是因为c是常量引用，不能修改，如果c有前导0，输出就是错的了
     //把c赋值给temp ，通过删掉temp的前导0保证输出是正确的
     //对于c来说，保留前导0是没有什么影响的，不影响四则运算，这个temp只是为了保证输出正确而已
     if(c.v.empty())
